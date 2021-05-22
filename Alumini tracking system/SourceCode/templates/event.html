@@ -1,0 +1,12 @@
+{% extends 'layout2.html' %}
+{% block body %}
+
+{% if type==1 %}
+<h1>Students can view this events(only of their college) and can participate</h1>
+{% elif type==2 %}
+<h1>Events are created by colleges here</h1>
+{% else %}
+<h1>Can only see events</h1>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ATS</title>
+	<style type="text/css">
+		#form{
+				border:ridge;
+				background-color:white;
+		}
+		#clg{
+		background-image:url("http://www.solidbackgrounds.com/images/2880x1800/2880x1800-light-cyan-solid-color-background.jpg");
+		}
+		#txt{
+			resize: none;
+			overflow: auto;
+		}
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body id="clg">
+<form action="http://localhost:5000/collegeProfiles/{{roll}}" method="post">
+	<div class="my-5 d-flex flex-row justify-content-center align-items-center">
+		<div class="col-3"></div>
+		<div class="col-6 d-flex flex-row" id="form-main" >
+			<div class="col-11 px-5" id="form">
+			<div class="form-group ml-3 mt-5">
+				<label><h5>College Name:</h5></label><br>
+				<textarea rows="1" cols="50"name="account" id="txt">{{req['account']}}</textarea>
+             </div>
+             <div class="form-group ml-3">
+				<label><h5>College Acronym:</h5></label><br>
+				<textarea rows="1" cols="50"name="short" id="txt">{{req['short']}}</textarea>
+             </div>            
+             <div class="form-group ml-3">
+				<label><h5>Director:</h5></label><br>
+				<textarea rows="1" cols="50"name="director" id="txt">{{req['director']}}</textarea>
+			</div>
+			<div class="form-group ml-3">
+				<label><h5>Contact:</h5></label><br>
+				<textarea rows="1" cols="50" name="contact" id="txt">{{req['contact']}}</textarea>
+			</div>
+			<div class="form-group ml-3">
+				<label><h5>Website:</h5></label><br>
+				<textarea rows="1" cols="50"name="website"  id="txt">{{req['website']}}</textarea>
+			</div>
+			<div class="form-group ml-3">
+				<label><h5>Mail:</h5></label><br>
+				<textarea rows="1" cols="50" name="email" id="txt">{{req['email']}}</textarea>
+			</div>
+			<div class="form-group ml-3">
+				<label><h5>Address:</h5></label><br>
+				<textarea rows="6" cols="50" name="address"  id="txt">{{req['address']}}</textarea>
+			</div>
+			<div class="form-group ml-3">
+				<label><h5>Accreditations:</h5></label><br>
+				<textarea rows="4" cols="50" name="accredition" id="txt">{{req['accredition']}}</textarea>
+			</div>
+			<button type="submit" class="ml-3 mb-3 btn btn-primary">Save</button>
+			</div>
+		</div>
+		<div class="col-3"></div>
+	</div>
+</form>
+<!-- <script type="text/javascript">$("textarea").autoResize();</script> -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
