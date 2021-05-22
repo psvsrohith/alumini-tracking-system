@@ -1,0 +1,37 @@
+{% extends 'layout2.html' %}
+{% block body %}
+<div class="d-flex flex-column">
+  <div class="d-flex flex-row">
+    <div class="col-8 mt-3">
+      <p class="mt-2"><strong><h1>{{req['first']}} {{req['last']}}</h1></strong></p>
+      <h5>
+      <p>{{req['id']}}</p>
+      <p>{{req['job']}}</p>
+      <p>{{req['company']}}</p>
+      <p>{{req['gender']}}</p>
+      <p>{{req['mar']}}</p>
+      <p>{{req['aadhar']}}</p>
+      <p>{{req['phone']}}</p>
+      <p>{{req['email']}}</p>
+      <p>{{req['address']}}</p>
+      <p>{{req['works']}}</p>
+      </h5>
+    </div>
+    <div class="potrait"><img src="{{url_for('recieved_file',filename=req['id'])}}" alt="Your Cute Profile" class="img-thumbnail">
+      <form method="post" enctype="multipart/form-data" action="{{url_for('studentProfileImg',name=req['id'])}}">
+        <input type="file" name="file">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="col-4 mt-3"></div>
+  </div>
+  <a href="{{url_for('editStudentProfile',name=roll)}}"><button class="btn btn-primary px-3">Edit Profile</button></a>
+  <div class="border mt-3">
+    <h1>Posts</h1>
+  </div>
+  {% for x in req2 %}
+  <p>{{x['post']}}</p>
+  {% endfor %}
+</div>
+
+{% endblock %}

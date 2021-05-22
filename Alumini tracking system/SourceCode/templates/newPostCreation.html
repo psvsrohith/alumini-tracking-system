@@ -1,0 +1,11 @@
+{% extends 'layout1.html' %}
+{% block body %}
+<block id="form-body">
+<form action="http://localhost:5000/{{type}}/{{roll}}/post" method="post">
+	<div class="m-3">
+		<label>Description:</label><br>
+		<textarea rows = "5" cols = "100" name = "description"></textarea><br>
+	</div>
+<button type="submit" class="ml-3 mb-3 btn btn-primary">Submit</button>
+</form>
+{% endblock %}
