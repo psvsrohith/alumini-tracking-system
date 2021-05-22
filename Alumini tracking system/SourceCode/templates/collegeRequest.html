@@ -1,0 +1,18 @@
+{% extends 'layout2.html' %}
+{% block body %}
+<h1>alumni and students requests here</h1>
+
+	{% for x in req %}
+		<div class="m-3 border border-rounded">
+			<div class="m-2">
+			<p>Name   : {{x['first']}} {{x['last']}}</p>
+			<p>Roll   : {{x['id']}}</p>
+			<p>Aadhar : {{x['aadhar']}}</p>
+			<p>Phone  : {{x['phone']}}</p>
+			<p>Email  : {{x['account']}}</p>
+			<a href="{{url_for('collegeRequests',type1='1',name_s=x['id'],name_c=roll)}}"><button class="btn btn-primary px-4 mb-2">Yes</button></a>
+			<a href="{{url_for('collegeRequests',type1='0',name_s=x['id'],name_c=roll)}}"><button class="btn btn-primary px-4 ml-2 mb-2">No</button></a>
+		</div></div>
+	{% endfor %}
+
+{% endblock %}

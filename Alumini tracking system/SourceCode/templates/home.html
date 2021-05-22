@@ -1,0 +1,16 @@
+{% extends 'layout2.html' %}
+{% block body %}
+
+<div class="d-flex flex-row justify-content-between">
+	<div><h1 class="mt-1">Posts</h1></div>
+	<div>
+	{% if type<3 %}
+	<a href="{{url_for('newPost',name=roll,num=type)}}"><button class="btn btn-primary mt-2 px-5 py-2">New Post</button></a>
+	{% endif %}
+	</div>
+</div>
+{% for x in req %}
+<p class="mt-5">{{x['person_id']}}</p>
+<p>{{x['post']}}</p><br>
+{% endfor %}
+{% endblock %}

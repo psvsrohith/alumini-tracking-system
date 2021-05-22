@@ -1,0 +1,25 @@
+{% extends 'layout2.html' %}
+{% block body %}
+<div class="d-flex flex-column">
+  <div class="d-flex flex-row">
+    <div class="col-8 mt-3">
+      <p class="mt-2"><h3><strong>{{req['account']}}({{req['short']}})</strong></h3></p>
+      <p><h5>{{req['id']}}</h5></p>
+      <p><h5>{{req['director']}}</h5></p>
+      <p><h5>{{req['email']}}</h5></p>
+      <p><h5>{{req['website']}}</h5></p>
+      <p><h5>{{req['accredition']}}</h5></p>
+      <p><h5>{{req['address']}}</h5></p>
+      <p><h5>{{req['contact']}}</h5></p>
+      <p></p>
+      <a href="{{url_for('editCollegeProfile',name=roll)}}"><button class="btn btn-primary px-3">Edit Profile</button></a>
+    </div>
+  </div>
+  <div class="border mt-3">
+    <h1>Posts</h1>
+  </div>
+  {% for x in req2 %}
+  <p>{{x['post']}}</p>
+  {% endfor %}
+</div>
+{% endblock %}
