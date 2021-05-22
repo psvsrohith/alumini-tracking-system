@@ -1,0 +1,39 @@
+{%extends 'layout1.html' %}
+{%block body%}
+  <body id="loginSignUpBg">
+	   <div class="container d-flex flex-column my-5 border" style="background-color: rgb(255,255,255);">
+      <a href="{{'signup'}}"><button type="button" class="btn btn-outline-primary mt-5 mb-5 mr-5" id="buttonAtRight">Sign Up</button></a>
+      <h1 class="ml-5"><b>Login</b></h1>
+      <div class="d-flex flex-column flex-md-row justify-content-around mt-5">
+        <div class="card m-3 mb-5" style="width: 40%;">
+          <div class="card-body">
+            <img src="https://www.tutorean.co.uk/bettertutor/wp-content/uploads/2017/11/students.jpg" class="card-img-top" style="width: 90%; height: 250px">
+            <h1 class="card-title">Alumni</h1>
+            <h4>We Welcomes You To Alumini World</h4>
+            <p class="card-text"><br><br></p>
+            <a href="{{'1'}}" class="btn btn-outline-success">Login</a>
+          </div>
+        </div>
+        <div class="card m-3 mb-5" style="width: 40%;">
+          <div class="card-body">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Chapin_Hall%2C_Williams_College_-_Williamstown%2C_Massachusetts.jpg" style ="width:90%; height: 250px;"class="card-img-top">
+            <h1 class="card-title">College</h1>
+            <h4>For Management of the college</h4>
+            <p class="card-text"><br><br></p>
+            <a href="{{'2'}}" class="btn btn-outline-success">Login</a>
+          </div>
+        </div>
+        <div class="card m-3 mb-5" style="width: 30%;">
+          <div class="card-body">
+            <img src="https://171036-495725-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/03/Directorate-of-Higher-Education-Goa.jpg" style="width: 90%; height: 250px;" class="card-img-top">
+            <h1 class="card-title">Directorate</h1>
+            <h4>For Directorate Of Education</h4>
+            <p class="card-text"><br><br></p>
+            <a href="{{'3'}}" class="btn btn-outline-success">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+{%endblock%}

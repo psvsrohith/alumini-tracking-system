@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>ATS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styles.css')}}">
+  </head>
+
+<body id="loginsuccess">
+  		<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  			<a class="navbar-brand" href="#">ATS</a>
+  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+  			</button>
+  			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    			<ul class="navbar-nav mr-auto">
+              <li class="nav-item active"><a class="nav-link" href="#">{{roll}}</a></li>
+      				<li class="nav-item"><a class="nav-link" href="{{url_for('home',num=type,name=roll)}}">Home</a></li>
+      				<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+    			</ul>
+    			<!-- <form class="form-inline my-2 my-lg-0">
+      				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    			</form> -->
+          <a href="{{url_for('login')}}" id="but" class="btn ml-3">LogOut</a>
+  			</div>
+		</nav>
+		<div class="d-flex flex-row justify-content-around" style="margin-top: 90px">
+			<div class="d-none d-md-block col-md-2">
+        <a id="but" class="btn mb-1" style="width: 80%;height: 40px" href="{{url_for('home',num=type,name=roll)}}">Posts</a><br>
+          {% if type==1 %}
+            <a id="but" class="btn mb-1" style="width: 80%;height: 40px" href="{{url_for('studentProfile',name=roll)}}" >Profile</a><br>
+  				  <a id="but" class="btn mb-1" style="width: 80%;height: 40px" href="{{url_for('studentChat',name=roll)}}">Chats</a><br>
+  				  <a id="but" class="btn mb-1" style="width: 80%;height: 40px" href="{{url_for('studentGroup',name=roll)}}">Groups</a><br>
+            <a id="but" class="btn mb-1" style="width: 80%;height: 40px" href="{{url_for('event',num=1,name=roll)}}">Events</a><br>
+          {% elif type==2 %}
+            <a id="but" class="btn mb-1" style="width: 80%;height: 40px" href="{{url_for('collegeProfile',name=roll)}}">Profile</a><br>
+            <a id="but" class="btn mb-1" style="width: 80%;height: 40px" href="{{url_for('collegeGroup',name=roll)}}">Group</a><br>
+            <a id="but" class="btn mb-1" style="width: 80%;height: 40px" href="{{url_for('event',num=2,name=roll)}}">Events</a><br>
+            <a id="but" class="btn mb-1" style="width: 80%;height: 40px" href="{{url_for('collegeRequest',name=roll)}}">Requests</a><br>
+          {% else %}
+            <a id="but" class="btn mb-1" style="width: 80%;height: 40px" href="{{url_for('event',num=3,name='Directorate')}}">Events</a><br>
+          {% endif %}
+			</div>
+			<div class="col-12 col-md-7 border dar">
+          {% block body %}{% endblock %}
+			</div>
+   			<div class="d-none d-md-block col-md-3">
+   			</div>
+		</div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
